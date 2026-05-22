@@ -150,6 +150,7 @@ li{
     background-color: #FF4F34;
     width:205px;
     color: #fff;
+    height: 50px;
 }
 .mainbtn1:hover{
     background-color: #ff472b;
@@ -158,6 +159,7 @@ li{
 }
 .mainbtn2{
     width:153.36px;
+     height: 50px;
 }
 .mainbtn2:hover{
     background-color: rgb(255, 255, 255);
@@ -427,7 +429,9 @@ top: 65.85px;
     background-color: #FF4F34;
     width:185px;
     color: #fff;
+    /* height: 40px; */
 }
+
 /* MENU ICON */
 
 .menuIcon{
@@ -591,15 +595,17 @@ top: 65.85px;
     align-items: center;
     gap: 10px;
     height: 90.82px;
+    padding-top: 25px;
 }
  .mainbtn1{
     background-color: #FF4F34;
     width:185px;
+    padding: 15px;
     color: #fff;
 }
 .mainbtn2{
     width:185px;
-   
+    padding: 15px;
 }
 
 
@@ -2589,10 +2595,11 @@ justify-content: center;
     }
 
     .row7 button{
-        width: 45%;
-        max-width: 260px;
+        width: 100%;
+        max-width: 280px;
         font-size: 10px;
         margin-top: 5px;
+        padding: 5px;
     }
    
 
@@ -3464,9 +3471,9 @@ background-color: #666666;
 }
 .mainContent .middle .circleleft,
 .mainContent .middle .circleright{
-    width: 28px;
-    height: 28px;
+  display: none;
 }
+
 .mainContent .middle .circleleft img,
 .mainContent .middle .circleright img{
     width: 10px;
@@ -3474,10 +3481,13 @@ background-color: #666666;
 .mainContent .middle .circleBottom{
     width: 40px;
     height: 40px;
+    bottom: -20px;
+    left: 44%;
 }
 .mainContent .side .circleBottom{
     width: 40px;
     height: 40px;
+    left:44%;
 }
 .row10 .bottomContent{
     width: 95%;
@@ -3515,18 +3525,15 @@ background-color: #666666;
     position: relative;
 }
 .row11 .content{
-    /* background-color: #ff4f343f; */
     width: 90%;
     height: 80%;
     position: relative;
 }
 .row11 .content .rows{
-    /* background-color: #f83619; */
     position: absolute;
     left: 0%;
     width: 50%;
     height: 100%;
-    /* background-color: #a6ff0057; */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -3539,7 +3546,7 @@ background-color: #666666;
 .row11 .row{
     background-color: rgb(255, 255, 255);
     height: 60px;
-    width: 93%;
+    width: 90%;
      border-bottom-right-radius: 20px;
      display: flex;
      justify-content:space-between;
@@ -3550,19 +3557,22 @@ background-color: #666666;
 .row11 .rows .answer2,
 .row11 .rows .answer3,
 .row11 .rows .answer4{
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:max-height 0.6s ease,opacity 0.5s ease,transform 0.5s ease,padding 0.5s ease;
+    padding: 0px 10px;
 }
-.row11 .rows .question1:hover + .answer1{
-    display: block;
-}
-.row11 .rows .question2:hover + .answer2{
-    display: block;
-}
-.row11 .rows .question3:hover + .answer3{
-    display: block;
-}
+
+.row11 .rows .question1:hover + .answer1,
+.row11 .rows .question2:hover + .answer2,
+.row11 .rows .question3:hover + .answer3,
 .row11 .rows .question4:hover + .answer4{
-    display: block;
+    max-height: 200px;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 20px;
 }
 .question1:hover{
     background-color: #FF4F34;
@@ -3621,10 +3631,11 @@ background-color: #666666;
     color: #FFFFFF4D;
 }
 
+
 @media (max-width: 1024px){
 .row11{
     height: auto;
-    padding: 70px 20px;
+    padding: 10px 20px;
     background-size: cover;
 }
 .row11 .content{
@@ -3635,12 +3646,14 @@ background-color: #666666;
     position: static;
     width: 100%;
     height: auto;
+     gap: 1px;
 }
 .row11 .rows h1{
     font-size: 34px;
     text-align: center;
     margin-bottom: 20px;
 }
+
 .row11 .row{
     width: 100%;
     min-height: 60px;
@@ -3657,15 +3670,18 @@ background-color: #666666;
 }
 @media (max-width: 576px){
 .row11{
-    padding: 50px 15px;
+    padding: 20px 15px;
     background-size: cover;
     background-position: center;
+      background-attachment: fixed;
+      overflow: hidden;
+
 }
 .row11 .content{
     width: 100%;
 }
 .row11 .content .rows{
-    gap: 15px;
+    gap: 1px;
 }
 .row11 .rows h1{
     font-size: 24px;
@@ -3674,7 +3690,7 @@ background-color: #666666;
 }
 .row11 .row{
     width: 100%;
-    min-height: 60px;
+    min-height: 30px;
     padding: 12px 15px;
     border-bottom-right-radius: 15px;
 }
@@ -3696,8 +3712,9 @@ background-color: #666666;
 .row11 .rows .answer3 p,
 .row11 .rows .answer4 p{
     width: 100% !important;
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 13px;
+    line-height: 20px;
+    padding-top: 4px;
 }
 }
 .row12{
@@ -3745,6 +3762,16 @@ background-color: #666666;
     justify-content: center;
     align-items: end;
 }
+
+.row12 .content .col1  .two{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: -33px;
+    margin-top: 30px;
+}
+
 .row12 .content .col1 .imgSection .imgContent{
     width: 90%;
     height: 40%;
@@ -3897,6 +3924,14 @@ form{
     top: 0;
     right: 0;
     height: 100%;
+}
+
+.row12 .content .col1  .two{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    margin-top: 30px;
 }
 .row12 .content .col1 .imgSection .imgContent{
     margin-bottom: 30px;
@@ -4079,6 +4114,12 @@ form{
 .row12 .content .col1 .imgSection .round i{
     font-size: 15px !important;
 }
+
+.row12 .content .col1  .two{
+    margin-left: -20px;
+    margin-top: 30px;
+}
+
 .row12 .content .col2{
     width: 100%;
     height: auto;
@@ -4336,23 +4377,4 @@ form{
     background-color: #000000;
     gap: 0;
     color:#A2A2A2;
-}
-
-.faq-item{
-    width: 100%;
-}
-
-.question{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    cursor: pointer;
-}
-.answer{
-    display: none;
-    padding: 15px 20px;
-}
-.faq-item:hover .answer{
-    display: block;
 }
