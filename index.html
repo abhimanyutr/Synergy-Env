@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Anton&family=Archivo+Black&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bebas+Neue&family=Caprasimo&family=Caveat:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Emblema+One&family=Gabriela&family=Goblin+One&family=Holtwood+One+SC&family=Imbue:opsz,wght@10..100,100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Libertinus+Math&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lilita+One&family=Mako&family=Outfit:wght@100..900&family=Poller+One&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rammetto+One&family=Sevillana&display=swap" rel="stylesheet"></head>
 <body>
     <div class="main">
-      <div class="home">
+      <div class="home" id="home">
             <div class="frame">
                 <img src="./imgSrc/Frame.png" alt="logo">
             </div>
@@ -29,38 +29,35 @@
             <div class="reserveDum">
                <a href=""> <button class="ucase">RESERVE A DUMPSTER</button></a>
                  <div class="menuIcon" onclick="openMenu()">
-        <i class="fa-solid fa-bars"></i>
-    </div>
+                 <i class="fa-solid fa-bars"></i>
             </div>
-           
+        </div>
             <div class="navList"  id="navList">
                 <ul class="ulList">
-                <li><a href=""> HOME</a></li>
-                <li> <a href="">OUR DUMPSTERS</a></li>
-                <li> <a href="">SERVICES</a></li>
-                <li><a href="">ABOUT US</a></li>
+                <li><a href="#home"> HOME</a></li>
+                <li> <a href="#OurDumpsters">OUR DUMPSTERS</a></li>
+                <li> <a href="#services">SERVICES</a></li>
+                <li><a href="#about-us">ABOUT US</a></li>
                 <li><a href="">BLOGS</a></li>
-                <li><a href="">CONTACT US</a></li>
+                <li><a href="#Contact-us">CONTACT US</a></li>
                 </ul>
-               
             </div>
-<div class="sideMenu" id="sideMenu">
+           <div class="sideMenu" id="sideMenu">
 
     <div class="closeBtn" onclick="closeMenu()">
         ✕
     </div>
 
     <ul>
-        <li><a href="">HOME</a></li>
-        <li><a href="">OUR DUMPSTERS</a></li>
-        <li><a href="">SERVICES</a></li>
-        <li><a href="">ABOUT US</a></li>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#OurDumpsters">OUR DUMPSTERS</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#about-us">ABOUT US</a></li>
         <li><a href="">BLOGS</a></li>
-        <li><a href="">CONTACT US</a></li>
+        <li><a href="#Contact-us">CONTACT US</a></li>
     </ul>
 
-</div>
-
+            </div>
             <div class="mainHeading">
                 <h1 class="ucase">Reliable Dumpster Rentals in <br><span style="color:#FF4F34;">Prince Edward Island</span> </h1>
                 <div class="mbtn ucase">
@@ -68,9 +65,13 @@
                    <a href=""><button class="mainbtn mainbtn2">GET PRICING</button></a>
                 </div>
             </div>
-        </div>
-        <div class="row2">
-            
+            <div class="sideIcons">
+               <a href=""> <img src="./imgSrc/fb.png" alt=""></a>
+               <a href=""> <img src="./imgSrc/X.png" alt=""></a>
+            </div>
+    </div>
+
+        <div class="row2"> 
             <div class="row2item item1">
                 <img  src="./imgSrc/Group 506.png" alt="">
                 <h3>LOCAL PEI COMPANY</h3>
@@ -91,15 +92,15 @@
 
         <!-- -----Row3----- -->
 
-        <div class="row3">
+        <div class="row3" id="services">
             <h2 class="ucase">Our Services</h2>
             <div class="row3item">
-                <div class="row3items row3item1">
+                <div class="row3items row3item1" id="Dumpster-Rentals">
                      <div class="row3content content1">
                             <div class="row3heading ucase">
                                 <h3>Dumpster Rentals</h3>
                             </div>
-                            <p style="padding-right: 5px; padding-top: 13px;">Perfect for home renovations, construction waste, and large cleanups.</p>
+                            <p style="padding-right: 5px; padding-top: 18px;">Perfect for home renovations, construction waste, and large cleanups.</p>
                              
                             <a class="ucase" href="" style="text-decoration: none; color: #FF4F34;">Learn More <i class="fa-solid fa-arrow-right"></i> </a>
                      </div>    
@@ -107,12 +108,12 @@
                            <img src="./imgSrc/Vector.png" alt="">
                      </div>
                 </div>
-                <div class="row3items row3item2"> 
+                <div class="row3items row3item2" id="Excavator-Demolition"> 
                     <div class="row3content content1">
                             <div class="row3heading ucase">
                                 <h3>Mini Excavator / Demolition</h3>
                             </div>
-                            <p style="padding-right: 5px; padding-top: 13px;">Ideal for estate cleanouts, yard debris, and bulk waste removal.</p>
+                            <p style="padding-right: 5px; padding-top: 18px;">Ideal for estate cleanouts, yard debris, and bulk waste removal.</p>
                              
                             <a class="ucase" href="" style="text-decoration: none; color: #FF4F34;">Learn More <i class="fa-solid fa-arrow-right"></i> </a>
                      </div>    
@@ -120,17 +121,17 @@
                            <img src="./imgSrc/Group.png" alt="">
                      </div>
                 </div>
-                <div class="row3items row3item3">
+                <div class="row3items row3item3" id="Scrap-Metal">
                     <div class="row3content content1">
                             <div class="row3heading ucase">
                                 <h3>Scrap Metal</h3>
                             </div>
-                            <p style="padding-right: 5px; padding-top: 13px;">Efficient scrap metal collection and recycling for a cleaner environment.</p>
+                            <p style="padding-right: 5px; padding-top: 18px;">Efficient scrap metal collection and recycling for a cleaner environment.</p>
                              
                             <a class="ucase" href="" style="text-decoration: none; color: #FF4F34;">Learn More <i class="fa-solid fa-arrow-right"></i> </a>
                      </div>    
                      <div class="circle circle3">
-                           <img src="./imgSrc/Vector.png" alt="">
+                           <img src="./imgSrc/Group 522.png" alt="">
                      </div> </div>
             </div>
 
@@ -138,7 +139,7 @@
 
            <!-- -----Row 4----- -->
 
-           <div class="row4">
+           <div class="row4" id="about-us">
 
             <div class="section1">
 
@@ -155,7 +156,7 @@
             <div class="section2">
                    
                 <div class="section2Content">
-                    <h1 class="ucase" style="font-weight:300; font-size:30px;">About</h1>
+                    <h1 class="ucase" style="font-weight:300; color: #FF4F34; font-size:30px;">About</h1>
                     <h1 class="makoHeading">SYNERGY <br> ENVIRO</h1>
                     <img src="./imgSrc/Group 523.png" alt="">
                     <div>
@@ -174,11 +175,11 @@ Prince Edward Island since 2014</b>. At Synergy Environmental, we are committed 
            </div>
 
            <!-- ----ROW5--- -->
-      <div class="row5">
+      <div class="row5" id="OurDumpsters">
 
         <div class="row5Section1">
 
-            <div class="item1"><h1 class="ucase" style="font-size: 45px;">Choose the Right Dumpster Size</h1></div>
+            <div class="item1"><h2 class="ucase">Choose the Right Dumpster Size</h2></div>
             <div class="item2"><p>Choosing the right dumpster size ensures efficient waste disposal. We offer various sizes for home renovations, cleanouts, or construction projects to keep you organized.</p></div>
             <div class="item3">
                 <a href=""><button class="btn">Reserve a Dumpster</button></a></div>
@@ -249,7 +250,7 @@ Prince Edward Island since 2014</b>. At Synergy Environmental, we are committed 
                 <div class="right">
                     <div class="rightSub">
                         <h1 class="ucase" style="line-height: 42px; letter-spacing: 0%; font-size: 40px; font-weight: 600;">Why Customers Choose Synergy Enviro</h1>
-                        <p style="font-weight: 400; font-size: small;">Customers choose Synergy Enviro for our reliable, eco-friendly services, transparent pricing, and commitment to sustainable waste management solutions that make a positive impact on the environment.</p>
+                        <p style="font-weight: 400;">Customers choose Synergy Enviro for our reliable, eco-friendly services, transparent pricing, and commitment to sustainable waste management solutions that make a positive impact on the environment.</p>
                    <a href=""> <button class="ucase btn">Reserve a Dumbster</button></a>
                     </div>
 
@@ -296,7 +297,7 @@ Management</h3>
          <!-- ----ROW7--- -->
           <div class="row7">
             <div class="top">
-                <h1 class="ucase" style="line-height: 42px; letter-spacing: 0%; font-size: 40px; font-weight: 600;">Renting a Dumpster is Simple</h1>
+                <h2 class="ucase" style="line-height: 12px; letter-spacing: 0%; font-size: 40px; font-weight: 600;">Renting a Dumpster is Simple</h2>
                 <img class="img1" src="./imgSrc/Mask group (2).png" alt="">
                 <img class="img2" src="./imgSrc/Group 543.png" width="270px" alt="">
                 <div class="box box1">
@@ -455,7 +456,7 @@ You won't be disappointed.</p>
     <div class="rows faq-item">
         <h1 class="ucase">Frequently Asked Questions</h1>
         <div class=" row row1  question1">
-            <div class="content" style="display: flex; justify-content: start; align-items: center; gap:15px">
+            <div class="faqHeader">
                 <h2 style="color: #00000038;">01</h2>
                 <p >What size dumpster do I need?</p>
             </div>
@@ -465,7 +466,7 @@ You won't be disappointed.</p>
     
         </div>
         <div class=" row answer1" style="background-color: transparent;">
-            <p style="width: 550px; color: #ffffff;">The right size depends on your project and the amount of waste. Our
+            <p style=" color: #ffffff;">The right size depends on your project and the amount of waste. Our
                 team can help you choose the best dumpster for your needs.</p>
         </div>
         <div class=" row question2">
@@ -477,7 +478,7 @@ You won't be disappointed.</p>
                 <img class="normal" src="./imgSrc/Arrow 8.png" alt="" width="35px">
         </div>
          <div class=" row answer2" style="background-color: transparent;">
-            <p style="width: 550px; color: #ffffff;">You can keep the dumpster for the duration of your project. We offer flexible rental periods and can arrange extensions if needed.</p>
+            <p style=" color: #ffffff;">You can keep the dumpster for the duration of your project. We offer flexible rental periods and can arrange extensions if needed.</p>
         </div>
 
         <div class=" row question3">
@@ -489,10 +490,10 @@ You won't be disappointed.</p>
                 <img class="normal" src="./imgSrc/Arrow 8.png" alt="" width="35px">
         </div>
         <div class=" row answer3" style="background-color: transparent;">
-            <p style="width: 550px; color: #ffffff;">Most household, construction, and renovation waste can go in the dumpster. Certain hazardous materials may not be allowed, so contact our team.</p>
+            <p style=" color: #ffffff;">Most household, construction, and renovation waste can go in the dumpster. Certain hazardous materials may not be allowed, so contact our team.</p>
         </div>
 
-        <div class=" row question4">
+        <div class="row question4">
             <div class="content" style="display: flex; justify-content: start; align-items: center; gap:15px">
                 <h2 style="color: #00000038;">04</h2>
                 <p>Do you deliver outside Charlottetown?</p>
@@ -501,7 +502,7 @@ You won't be disappointed.</p>
                 <img class="normal" src="./imgSrc/Arrow 8.png" alt="" width="35px">
         </div>
         <div class=" row answer4" style="background-color: transparent;">
-            <p style="width: 550px; color: #ffffff;">Yes, we provide dumpster delivery services in Charlottetown and surrounding areas. Contact us to confirm availability in your location.</p>
+            <p style=" color: #ffffff;">Yes, we provide dumpster delivery services in Charlottetown and surrounding areas. Contact us to confirm availability in your location.</p>
         </div>
     </div>
     
@@ -511,7 +512,7 @@ You won't be disappointed.</p>
  </div>
 
  <!-- --- Row 12 --- -->
- <div class="row12">
+ <div class="row12" id="Contact-us">
       
     <div class="content">
         <div class="col1">
@@ -615,27 +616,29 @@ You won't be disappointed.</p>
         <div class="content">
             <div class="first">
                 <div class="imgSection">
-                    <img src="./imgSrc/Frame.png" alt="" width="160px">
+                    <img src="./imgSrc/Frame.png" alt="" >
                     <div class="line"></div>
                     <p style="width: 90%; font-size: small; color: #FFFFFF;">Synergy Enviro has managed waste since 2014. We now offer Dumpster Rentals, Clean-ups, and Demolition Services.</p>
                 </div>
             </div>
             <div class="second">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Our Dumpsters</a></li>
-                    <li><a href="">About Us</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="OurDumpsters">Our Dumpsters</a></li>
+                    <li><a href="about-us">About Us</a></li>
                     <li><a href="">Blogs</a></li>
-                    <li><a href="">Contact Us</a></li>
+                    <li><a href="Contact-us">Contact Us</a></li>
                      <li><a href="">Site Map</a></li>
                 </ul>
             </div>
             <div class="Third">
                 <ul>
-                    <h4>Services</h4>
-                    <li>Dumpster Rentals</li>
-                    <li>Mini Excavator / Demolition</li>
-                    <li>Scrap Metal</li>
+                    <a href="#services">
+                        <h4>Services</h4> </a>
+                      <a href="#Dumpster-Rentals"><li>Dumpster Rentals</li></a>
+                      <a href="#Excavator-Demolition"><li>Mini Excavator / Demolition</li></a>
+                     <a href="#Scrap-Metal"> <li>Scrap Metal</li></a>
+                   
                     
                 </ul>
             </div>
