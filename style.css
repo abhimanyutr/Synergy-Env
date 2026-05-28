@@ -195,13 +195,14 @@ left: 560.45px;
     display: flex;
 justify-content: space-between;
 gap:25px;
-
 }
 li{
     list-style: none;
 }
 .ulList li:hover{
     text-decoration:2px underline #fb3c1edb ;
+    font-weight: 500;
+ 
 }
 .mainHeading {
   position: absolute;
@@ -349,14 +350,16 @@ li{
 }
 
 @media (min-width: 780px) and (max-width: 1024px) {
-.home {
+.home,.sliderContainer {
   width: 100%;
-  height: 100vh;
+  height:75vh;
   background-color: #f0f0f0;
-  background-image: url("./imgSrc/Mask group.jpg");
   background-size: cover; 
-  background-position:center;
+  background-position:right;
   background-repeat: no-repeat;
+}
+.sliderContainer .slideshow{
+     height: 75vh;
 }
 .frame {
   top: 50px;
@@ -396,7 +399,16 @@ li{
   flex-direction: column;
   justify-content: center;
   align-items:center;
-
+}
+.sliderBtns{
+    width: 95%;
+    top: 50%;
+    left: 0;
+    padding: 0 25px;
+}
+.sliderBtns button{
+    width: 40px;
+    height: 40px;
 }
 .content1{
     font-size: x-small;
@@ -435,7 +447,7 @@ li{
      width: 200px;
     }
 .mainHeading {
-  top: 350px;
+  top: 230px;
   font-size: 20px;
   color: aliceblue;
   width: 100%;
@@ -445,7 +457,7 @@ li{
   text-align: center;    
 }
  .mainHeading h1{
-     font-size: 48px;
+     font-size: 42px;
     }
 .mbtn{
     display: flex;
@@ -483,14 +495,16 @@ li{
     .navList.active{
         display: flex;
     }
-.home {
+.home,.sliderContainer {
   width: 100%;
-  height: 400px;
+  height: 80vh;
   background-color: #f0f0f0;
-  background-image: url("./imgSrc/Mask group.jpg");
   background-size: cover; 
   background-position:right;
   background-repeat: no-repeat;
+}
+.sliderContainer .slideshow{
+     height: 80vh;
 }
 .home .sideIcons{
     height: 100px;
@@ -505,7 +519,28 @@ li{
   top: 30px;
   left: 40px;
 }
+.sliderBtns{
+ display:none
+}
+.sliderBtns{
+    position: absolute;
+    width: 92%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    z-index: 10;
+}
+
+.sliderBtns button{
+    width: 40px;
+    height: 40px;
+}
 .frame img {
   width: 70px;
   height: auto;
@@ -580,7 +615,7 @@ top: 65.85px;
      width: 200px;
     }
 .mainHeading {
-  top: 180px;
+  top: 200px;
   font-size: 20px;
   color: aliceblue;
   width: 100%;
@@ -689,14 +724,16 @@ top: 65.85px;
     .navList.active{
         display: flex;
     }
-.home {
+.home,.sliderContainer {
   width: 100%;
   height: 100vh;
   background-color: #f0f0f0;
-  background-image: url("./imgSrc/Mask group.jpg");
   background-size: cover; 
   background-position:center;
   background-repeat: no-repeat;
+}
+.sliderContainer .slideshow {
+    height: 100vh;
 }
 .frame {
   top: 30px;
@@ -848,6 +885,9 @@ top: 65.85px;
     color: white;
     text-decoration: none;
     font-size: 10px;
+}
+.sliderBtns{
+ display:none
 }
 .sideMenu ul li a:hover{
     color: #FF4F34;
