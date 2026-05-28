@@ -184,7 +184,7 @@ a{
     background-color:#fb3b1e; ;
 }
 .navList{
-
+   
     position: absolute;
     width: 870.5PX;
 height: 20.6PX;
@@ -194,7 +194,8 @@ left: 560.45px;
 .ulList{
     display: flex;
 justify-content: space-between;
-gap:25px
+gap:25px;
+
 }
 li{
     list-style: none;
@@ -256,15 +257,24 @@ li{
 
 .sideMenu{
     position: fixed;
+
     top: 0;
     right: 0;
-    width: 120px;
+
+    width: 250px;
     height: 100vh;
-    background-color: rgba(8, 8, 8, 0.889);
-    padding: 15px;
+
+    background: rgba(0,0,0,0.95);
+
     transform: translateX(100%);
+
     transition: 0.4s ease;
-    z-index: 2000;
+
+    z-index: 9999;
+}
+
+.sideMenu.active{
+    transform: translateX(0);
 }
 .menuIcon{
     display: none;
@@ -408,6 +418,7 @@ li{
   cursor: pointer;
 }
     .navList{
+    
     width: 500.5PX;
    height: 20.6PX;
   top: 85.85px;

@@ -44,22 +44,6 @@
                 <li><a href="#Contact-us">CONTACT US</a></li>
                 </ul>
             </div>
-           <div class="sideMenu" id="sideMenu1">
-
-    <div class="closeBtn" onclick="closeMenu()">
-        ✕
-    </div>
-
-    <ul>
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#OurDumpsters">OUR DUMPSTERS</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#about-us">ABOUT US</a></li>
-        <li><a href="">BLOGS</a></li>
-        <li><a href="#Contact-us">CONTACT US</a></li>
-    </ul>
-
-            </div>
             <div class="mainHeading">
                 <h1 class="ucase">Reliable Dumpster Rentals in <br><span style="color:#FF4F34;">Prince Edward Island</span> </h1>
                 <div class="mbtn ucase">
@@ -105,22 +89,7 @@
                 <li><a href="#Contact-us">CONTACT US</a></li>
                 </ul>
             </div>
-           <div class="sideMenu" id="sideMenu2">
-
-    <div class="closeBtn" onclick="closeMenu()">
-        ✕
-    </div>
-
-    <ul>
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#OurDumpsters">OUR DUMPSTERS</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#about-us">ABOUT US</a></li>
-        <li><a href="">BLOGS</a></li>
-        <li><a href="#Contact-us">CONTACT US</a></li>
-    </ul>
-
-            </div>
+        
             <div class="mainHeading">
                 
 <h1 class="ucase">
@@ -150,7 +119,7 @@
               <a href="tel: 902-303-3712"> <div class="logo">
                      <i class="phoneIcon fa-solid fa-phone"></i>
                 </div></a> 
-                <div class="phoneContent">
+                <div class="phoneContent" style="color: white;">
                      <div class="content1 ucase">SPEAK TO SPECIALIST</div>
                      <div class="content2" ><a href="tel: 902-303-3712"> 902-303-3712</a></div>
                 </div>
@@ -162,30 +131,14 @@
             </div>
         </div>
             <div class="navList"  id="navList3">
-                <ul class="ulList">
-                <li><a href="#home"> HOME</a></li>
+                <ul class="ulList" style="color: white;">
+                <li><a href="#home1"> HOME</a></li>
                 <li> <a href="#OurDumpsters">OUR DUMPSTERS</a></li>
                 <li> <a href="#services">SERVICES</a></li>
                 <li><a href="#about-us">ABOUT US</a></li>
                 <li><a href="">BLOGS</a></li>
                 <li><a href="#Contact-us">CONTACT US</a></li>
                 </ul>
-            </div>
-           <div class="sideMenu" id="sideMenu3">
-
-    <div class="closeBtn" onclick="closeMenu()">
-        ✕
-    </div>
-
-    <ul>
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#OurDumpsters">OUR DUMPSTERS</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#about-us">ABOUT US</a></li>
-        <li><a href="">BLOGS</a></li>
-        <li><a href="#Contact-us">CONTACT US</a></li>
-    </ul>
-
             </div>
             <div class="mainHeading">
 <h1 class="ucase">
@@ -229,6 +182,25 @@
     
     </div>
      </div>
+
+     <div class="sideMenu" id="sideMenu1">
+
+    <div class="closeBtn" onclick="closeMenu()">
+        ✕
+    </div>
+
+    <ul>
+        <li><a href="#home1">HOME</a></li>
+        <li><a href="#OurDumpsters">OUR DUMPSTERS</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#about-us">ABOUT US</a></li>
+        <li><a href="">BLOGS</a></li>
+        <li><a href="#Contact-us">CONTACT US</a></li>
+    </ul>
+
+            </div>
+
+    
 <!-- --------------------------- -->
         <div class="row2"> 
             <div class="row2item item1">
@@ -785,7 +757,7 @@ You won't be disappointed.</p>
             </div>
             <div class="second">
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#home1">Home</a></li>
                     <li><a href="OurDumpsters">Our Dumpsters</a></li>
                     <li><a href="about-us">About Us</a></li>
                     <li><a href="">Blogs</a></li>
@@ -877,6 +849,7 @@ function closeMenu(){
 }
 const slides = document.querySelectorAll(".slideshow");
 const indicators = document.querySelectorAll(".indicator");
+
 
 let current = 0;
 let isAnimating = false;
@@ -987,6 +960,17 @@ function prevSlide(){
 
     },800);
 }
+
+const slider = document.querySelector(".sliderContainer");
+
+slider.addEventListener("mouseenter", () => {
+    clearInterval(autoSlide);
+});
+
+slider.addEventListener("mouseleave", () => {
+    autoSlide = setInterval(nextSlide, 4000);
+});
+
 </script>
 
 
