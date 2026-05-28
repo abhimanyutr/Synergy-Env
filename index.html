@@ -181,9 +181,9 @@
        <!-- Slide show Indicator -->
     <div class="indicatorContainer">
     
-        <div class="indicator activeBar"></div>
-        <div class="indicator"></div>
-        <div class="indicator"></div>
+        <button class="indicator activeBar" onclick="goToSlide(0)"></button>
+        <button class="indicator" onclick="goToSlide(1)"></button>
+        <button class="indicator" onclick="goToSlide(2)"></button>
     
     </div>
      </div>
@@ -397,7 +397,7 @@ Prince Edward Island since 2014</b>. At Synergy Environmental, we are committed 
 
                 <div class="cols4">
                     <div class="col4">
-                        <div class="imgLogo"><div class="imgLogoSub"><img width="70px" src="./imgSrc/Group (1).png" alt="icon1"></div></div>
+                        <div class="imgLogo"><div class="imgLogoSub"><img width="50px" src="./imgSrc/Group (1).png" alt="icon1"></div></div>
                         <div class="bottom">
                             <div class="content">
                                 <h3 class="ucase">Local PEI Business</h3>
@@ -405,21 +405,21 @@ Prince Edward Island since 2014</b>. At Synergy Environmental, we are committed 
                             </div>
                         </div>
                     </div>
-                    <div class="col4"><div class="imgLogo"><div class="imgLogoSub"><img width="70px" src="./imgSrc/Frame (1).png" alt="icon1"></div></div>
+                    <div class="col4"><div class="imgLogo"><div class="imgLogoSub"><img width="50px" src="./imgSrc/Frame (1).png" alt="icon1"></div></div>
                         <div class="bottom">
                             <div class="content">
                                 <h3 class="ucase">Reliable Delivery</h3>
                                 <p style="text-align: center;">On-time delivery and pickup you can depend on.</p>
                             </div>
                         </div></div>
-                    <div class="col4"><div class="imgLogo"><div class="imgLogoSub"><img width="70px" src="./imgSrc/Group 505.png" alt="icon1"></div></div>
+                    <div class="col4"><div class="imgLogo"><div class="imgLogoSub"><img width="50px" src="./imgSrc/Group 505.png" alt="icon1"></div></div>
                         <div class="bottom">
                             <div class="content">
                                 <h3 class="ucase">Transparent Pricing</h3>
                                 <p style="text-align: center;">No hidden fees or surprise charges.</p>
                             </div>
                         </div></div>
-                    <div class="col4"><div class="imgLogo"><div class="imgLogoSub"><img width="70px" style="padding-block:5px; " src="./imgSrc/Group 535.png" alt="icon1"></div></div>
+                    <div class="col4"><div class="imgLogo"><div class="imgLogoSub"><img width="50px" style="padding-block:5px; " src="./imgSrc/Group 535.png" alt="icon1"></div></div>
                         <div class="bottom">
                             <div class="content" >
                                 <h3 class="ucase">Professional Waste 
@@ -871,6 +871,49 @@ function updateIndicators(index){
     indicators[index].classList.add("activeBar");
 }
 
+/* GO TO SLIDE */
+
+function goToSlide(index){
+
+    if(isAnimating || current === index) return;
+
+    isAnimating = true;
+
+    const currentSlide = slides[current];
+    const targetSlide = slides[index];
+
+    const direction = index > current ? 1 : -1;
+
+    /* Prepare target slide */
+    targetSlide.style.transition = "none";
+    targetSlide.style.transform = `translateX(${100 * direction}%)`;
+    targetSlide.classList.add("active");
+
+    targetSlide.offsetHeight;
+
+    /* Animate */
+    targetSlide.style.transition = "transform 0.8s ease-in-out";
+    currentSlide.style.transition = "transform 0.8s ease-in-out";
+
+    currentSlide.style.transform = `translateX(${-100 * direction}%)`;
+    targetSlide.style.transform = "translateX(0)";
+
+    setTimeout(() => {
+
+        currentSlide.classList.remove("active");
+
+        currentSlide.style.transition = "none";
+        currentSlide.style.transform = "translateX(100%)";
+
+        current = index;
+
+        updateIndicators(current);
+
+        isAnimating = false;
+
+    },800);
+}
+
 
 /* NEXT */
 
@@ -1012,7 +1055,7 @@ const testimonials = [
 
 let testimonialIndex = 1; // Middle one
 
-function updateTestimonials() {
+function updateTestimonials(direction = 'next') {
     const leftIndex = (testimonialIndex + 2) % 3;
     const midIndex = testimonialIndex;
     const rightIndex = (testimonialIndex + 1) % 3;
@@ -1023,11 +1066,13 @@ function updateTestimonials() {
         { el: document.querySelector('.row10 .side.right'), data: testimonials[rightIndex], color: 'white' }
     ];
 
+    const animationClass = direction === 'next' ? 'testimonial-animate-next' : 'testimonial-animate-prev';
+
     cards.forEach(card => {
-        // Apply animation class to container
-        card.el.classList.remove('testimonial-animate');
+        // Apply animation class to container to trigger text children animations
+        card.el.classList.remove('testimonial-animate-next', 'testimonial-animate-prev');
         void card.el.offsetWidth; // Trigger reflow
-        card.el.classList.add('testimonial-animate');
+        card.el.classList.add(animationClass);
 
         card.el.querySelector('.pContent').textContent = card.data.pContent;
         card.el.querySelector('p:nth-of-type(2)').textContent = card.data.author;
@@ -1040,12 +1085,12 @@ function updateTestimonials() {
 
 function nextTestimonial() {
     testimonialIndex = (testimonialIndex + 1) % 3;
-    updateTestimonials();
+    updateTestimonials('next');
 }
 
 function prevTestimonial() {
     testimonialIndex = (testimonialIndex + 2) % 3;
-    updateTestimonials();
+    updateTestimonials('prev');
 }
 
 </script>
