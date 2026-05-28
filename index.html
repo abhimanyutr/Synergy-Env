@@ -46,6 +46,7 @@
             </div>
             <div class="mainHeading">
                 <h1 class="ucase">Reliable Dumpster Rentals in <br><span style="color:#FF4F34;">Prince Edward Island</span> </h1>
+                <h2 class="ucase">Affordable dumpster rentals for renovations and cleanups in PEI.</h2> 
                 <div class="mbtn ucase">
                    <a href=""> <button class="mainbtn mainbtn1">RESERVE A DUMPSTER</button></a>
                    <a href=""><button class="mainbtn mainbtn2">GET PRICING</button></a>
@@ -93,11 +94,13 @@
             <div class="mainHeading">
                 
 <h1 class="ucase">
-    Fast Delivery & Pickup for <br>
+    Fast Dumpster Services for <br>
     <span style="color:#FF4F34;">
-        Residential & Commercial Projects
+        Homes & Businesses
     </span>
-</h1>                <div class="mbtn ucase">
+</h1>
+<h2 class="ucase">Affordable dumpster rentals for renovations and cleanups in PEI.</h2> 
+<div class="mbtn ucase">
                    <a href=""> <button class="mainbtn mainbtn1">RESERVE A DUMPSTER</button></a>
                    <a href=""><button class="mainbtn mainbtn2">GET PRICING</button></a>
                 </div>
@@ -146,7 +149,9 @@
     <span style="color:#FF4F34;">
         Prince Edward Island
     </span>
-</h1>                <div class="mbtn ucase">
+</h1>  
+<h2 class="ucase">Affordable dumpster rentals for renovations and cleanups in PEI.</h2>          
+    <div class="mbtn ucase">
                    <a href=""> <button class="mainbtn mainbtn1">RESERVE A DUMPSTER</button></a>
                    <a href=""><button class="mainbtn mainbtn2">GET PRICING</button></a>
                 </div>
@@ -550,8 +555,8 @@ Highly recommend!</p>
                              <div class="circleBottom">
                                 <p style="font-size: x-large; font-weight: 500; color: black;">L</p>
                              </div>
-                             <div class=" circleleft"><img src="./imgSrc/Vector 26.png" alt=""></div>
-                             <div class="circleright"><img src="./imgSrc/Vector 26 (1).png" alt=""></div>
+                             <button class="circleleft" onclick="prevTestimonial()"><img src="./imgSrc/Vector 26.png" alt=""></button>
+                             <button class="circleright" onclick="nextTestimonial()"><img src="./imgSrc/Vector 26 (1).png" alt=""></button>
                         </div>
                         <div class="side right" class="side left" style="display: flex;flex-direction: column; gap: 0; justify-content: center; align-items: center;">
 
@@ -970,6 +975,78 @@ slider.addEventListener("mouseenter", () => {
 slider.addEventListener("mouseleave", () => {
     autoSlide = setInterval(nextSlide, 4000);
 });
+
+
+// FAQ Toggle
+document.querySelectorAll('.row11 .row[class*="question"]').forEach(question => {
+    question.addEventListener('click', () => {
+        const currentlyActive = document.querySelector('.row11 .row.active');
+        if (currentlyActive && currentlyActive !== question) {
+            currentlyActive.classList.remove('active');
+        }
+        question.classList.toggle('active');
+    });
+});
+
+// Testimonial Slider
+const testimonials = [
+    {
+        pContent: "Quick delivery and hassle-free pickup. Ideal for our home renovation. Highly recommend!",
+        author: "Charlottetown Homeowner",
+        info: "Charlottetown Property Solutions",
+        initial: "C"
+    },
+    {
+        pContent: "I really appreciate the collaborative efforts we've seen at Synergy Enviro. It's inspiring to see how we can all come together to tackle environmental challenges!",
+        author: "Liam Parker",
+        info: "Elysium Innovations",
+        initial: "L"
+    },
+    {
+        pContent: "Fantastic service with reasonable prices. I highly recommend Synergy Enviro! You won't be disappointed.",
+        author: "Derek Anderson",
+        info: "PEI Contractor",
+        initial: "D"
+    }
+];
+
+let testimonialIndex = 1; // Middle one
+
+function updateTestimonials() {
+    const leftIndex = (testimonialIndex + 2) % 3;
+    const midIndex = testimonialIndex;
+    const rightIndex = (testimonialIndex + 1) % 3;
+
+    const cards = [
+        { el: document.querySelector('.row10 .side.left'), data: testimonials[leftIndex], color: 'white' },
+        { el: document.querySelector('.row10 .middle'), data: testimonials[midIndex], color: 'black' },
+        { el: document.querySelector('.row10 .side.right'), data: testimonials[rightIndex], color: 'white' }
+    ];
+
+    cards.forEach(card => {
+        // Apply animation class to container
+        card.el.classList.remove('testimonial-animate');
+        void card.el.offsetWidth; // Trigger reflow
+        card.el.classList.add('testimonial-animate');
+
+        card.el.querySelector('.pContent').textContent = card.data.pContent;
+        card.el.querySelector('p:nth-of-type(2)').textContent = card.data.author;
+        card.el.querySelector('p:nth-of-type(3)').textContent = card.data.info;
+        const initialP = card.el.querySelector('.circleBottom p');
+        initialP.textContent = card.data.initial;
+        initialP.style.color = card.color;
+    });
+}
+
+function nextTestimonial() {
+    testimonialIndex = (testimonialIndex + 1) % 3;
+    updateTestimonials();
+}
+
+function prevTestimonial() {
+    testimonialIndex = (testimonialIndex + 2) % 3;
+    updateTestimonials();
+}
 
 </script>
 
